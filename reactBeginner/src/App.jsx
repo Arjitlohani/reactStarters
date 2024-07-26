@@ -1,12 +1,12 @@
-
+import Heading from './components/Heading.jsx'
+import HeadingKoChori from './components/headingKoChori.jsx'
 
 function App() {
-  const myInfo=import.meta.env.VITE_ENV
-
+  const heading1Value = "This is a heading component"
   return (
-    <div className="mt-5">
-      {myInfo}
-      
+    <div>
+      <Heading laChoraSampati={heading1Value} />
+      <HeadingKoChori chorikosampati={heading1Value} />
     </div>
   )
 }
