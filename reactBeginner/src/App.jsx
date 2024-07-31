@@ -38,6 +38,25 @@ import EventHandling from './components/EventHandling'
 
 // export default App
 
+// import { useState } from 'react'
+// import Dashboard from './components/ConditionalRendering/Dashboard'
+// import LoginButton from './components/ConditionalRendering/LoginButton'
+// function App ()  {
+//   const isLoggedIn = localStorage.getItem("loggedin")
+//   const [userIsLoggedIn, setIsUserIsLoggedIn] = useState(isLoggedIn || false)
+//   return (
+//     <div>
+//       {userIsLoggedIn ?
+//       <Dashboard userIsLoggedIn={userIsLoggedIn} setIsUserIsLoggedIn={setIsUserIsLoggedIn} />
+//        :
+//       <LoginButton setIsUserIsLoggedIn={setIsUserIsLoggedIn} userIsLoggedIn={userIsLoggedIn} />
+//       }
+//     </div>
+//   )
+// }
+
+// export default App
+
 function App() {
   return (
     <div>
