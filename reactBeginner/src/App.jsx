@@ -1,76 +1,48 @@
+/* eslint-disable no-unused-vars */
 
+// import FragmentComponent from './components/Fragment/FragmentComponent'
+// import useDataFetch from './components/Hooks/useDataFetch'
+// import { useState } from 'react'
+// import Dashboard from './components/ConditionalRendering/Dashboard'
+// import LoginButton from './components/ConditionalRendering/LoginButton'
+// import ListKeys from './components/ListKeys'
+// function App() { // This is main parent
+  // const isLoggedIn = localStorage.getItem("loggedin")
+  // const [userIsLoggedIn, setIsUserIsLoggedIn] = useState(isLoggedIn || false)
 
-// import Heading from './components/Heading.jsx'
+// import {AuthContext} from './components/Context/AuthProvider'
+import EventHandling from './components/EventHandling'
 
-// // import HeadingKoChori from './components/HeadingKoChori.jsx'
-
-// function App() {
-//   const heading1Value = "This is a heading component"
+//   const [data] = useDataFetch("https://jsonplaceholder.typicode.com/posts")
+//   console.log(data)
 //   return (
 //     <div>
-//       <Heading laChoraSampati={heading1Value} />
-//       {/* <HeadingKoChori chorikosampati={heading1Value} /> */}
-//     </div>
-//   )
+//   <FragmentComponent/>
+  
+//   <ul>
+//   {data?.length > 0 && data.map((item) => (
+//   <li key={item?.id}>
+//     {item?.title}
+//   </li>
+// ))}
+// </ul>
+  
+
+// </div>
+
+
+
+
+//     )
 // }
 
 // export default App
 
-
-// import { useState } from 'react'
-// import PropsChild1 from './components/PropsChild1'
-// import PropsChild2 from './components/PropsChild2'
-
-// function App() {
-//   const [name, setName]= useState("MERN")
-//   return (
-//     <div>
-//       <PropsChild1 name={name}/>
-//       <PropsChild2 setName={setName}>This is a children </PropsChild2>
-//     </div>
-//   )
-// }
-// export default App
-
-// import { useState } from 'react'
-// import Sidebar from './components/Sidebar';
-// import Navbar from './components/Navbar';
-
-// const App = () => {
-//   const [isNavbarClosed, setIsNavbarClosed] = useState(false);
-//   return (
-//     <div>
-//       <Navbar isNavbarClosed={isNavbarClosed}/>
-//       <Sidebar setIsNavbarClosed={setIsNavbarClosed}/>
-      
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-
-
-import { useState } from 'react'
-import Dashboard from './components/ConditionalRendering/Dashboard'
-import LoginButton from './components/ConditionalRendering/LoginButton'
-function App() { // This is main parent
-  // const [isNavbarClosed, setIsNavbarClosed] = useState(false)
-  const isLoggedIn = localStorage.getItem("loggedin")
-  const [userIsLoggedIn, setIsUserIsLoggedIn] = useState(isLoggedIn || false)
+function App() {
   return (
     <div>
-      {/* <Navbar isNavbarClosed={isNavbarClosed} />
-      <Sidebar setIsNavbarClosed={setIsNavbarClosed} /> */}
-      {userIsLoggedIn ?
-      <Dashboard userIsLoggedIn={userIsLoggedIn} setIsUserIsLoggedIn={setIsUserIsLoggedIn} />
-       :
-      <LoginButton setIsUserIsLoggedIn={setIsUserIsLoggedIn} userIsLoggedIn={userIsLoggedIn} />
-      }
-     
+      <EventHandling/>
     </div>
   )
 }
-
 export default App

@@ -1,6 +1,12 @@
+/* eslint-disable no-unused-vars */
+import { useEffect } from 'react';
+import { useContext } from 'react'
 import { useState } from 'react'
-
+import { AuthContext } from './Context/AuthProvider';   
+import { ThemeContext } from './Context/ThemeProvider'
 const EventHandling = () => {
+    const {userName, setUserName} = useContext(AuthContext);
+    const {primaryColor, secondaryColor, successColor,dangerColor} = useContext(ThemeContext);
     const [formValue, setValue] = useState("")
     const [lastName, setLastName] = useState("")
 
@@ -13,14 +19,18 @@ const EventHandling = () => {
     } 
 
     const handleSubmit = (e) => {
+        setUserName(formValue)
         e.preventDefault()
         alert(`Hello ${formValue} ${lastName}`)
         setValue('')
         setLastName('')
     }
 
+    useEffect(()=>{
+        userName?setValue(userName):setValue("")
+    })
   return (
-    <div><h1>Event Handling</h1>
+    <div><h1 style={{color: primaryColor}}>Event Handling</h1>
         <form onSubmit={handleSubmit}>
         <input
          value={formValue}
@@ -29,7 +39,7 @@ const EventHandling = () => {
         placeholder="First Name"
      />
         <input value={lastName} onChange={handleInput2Change} style={{width: "250px", padding: '12px', marginLeft: "12px"}} placeholder="Last Name" />
-        <button type="submit">
+        <button type="submit" style={{backgroundColor: successColor}}>
             Click me
         </button>
         </form>
